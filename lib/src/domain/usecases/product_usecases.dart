@@ -1,4 +1,4 @@
-import 'package:test/domain/repositor/product_repository.dart';
+import 'package:test/src/domain/repository/product_repository.dart';
 
 import '../entities/product_entity.dart';
 

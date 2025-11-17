@@ -1,5 +1,5 @@
 import '../../domain/entities/wishlist_entity.dart';
-import '../../domain/repositor/wishlist_repository.dart';
+import '../../domain/repository/wishlist_repository.dart';
 import '../datasource/wishlist_datasource.dart';
 
 import '../models/wishlist_model.dart';

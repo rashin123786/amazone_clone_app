@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test/domain/entities/product_entity.dart';
-import 'package:test/presentation/screens/product_details_screen.dart';
+import 'package:test/src/domain/entities/product_entity.dart';
+import 'package:test/src/presentation/screens/product_details_screen.dart';
 
 import '../../domain/entities/wishlist_entity.dart';
 import '../provider/wishlist_controller.dart';
@@ -69,6 +69,7 @@ class WishlistTile extends StatelessWidget {
         );
       },
       child: Card(
+        color: Colors.white,
         margin: EdgeInsets.symmetric(vertical: 8),
         elevation: 1.2,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -85,6 +86,7 @@ class WishlistTile extends StatelessWidget {
                   height: 95,
                   width: 95,
                   fit: BoxFit.cover,
+                  errorWidget: (context, url, error) => Icon(Icons.info),
                 ),
               ),
 

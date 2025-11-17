@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../domain/entities/cart_entity.dart';
 import '../../domain/entities/product_entity.dart';
-import '../../domain/repositor/cart_repository.dart';
+import '../../domain/repository/cart_repository.dart';
 
 class CartController with ChangeNotifier {
   final CartRepository repo;

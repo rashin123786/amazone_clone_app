@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test/presentation/widgets/success_alert.dart';
+import 'package:test/src/presentation/widgets/success_alert.dart';
 
 class CheckoutScreen extends StatelessWidget {
   const CheckoutScreen({

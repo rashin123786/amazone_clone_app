@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:test/domain/usecases/product_usecases.dart';
+import 'package:test/src/domain/usecases/product_usecases.dart';
 import '../../domain/entities/product_entity.dart';
 
 class ProductController with ChangeNotifier {

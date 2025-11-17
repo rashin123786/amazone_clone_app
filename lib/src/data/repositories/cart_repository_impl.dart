@@ -1,7 +1,7 @@
-import 'package:test/data/datasource/cart_datasource.dart';
+import 'package:test/src/data/datasource/cart_datasource.dart';
 
 import '../../domain/entities/cart_entity.dart';
-import '../../domain/repositor/cart_repository.dart';
+import '../../domain/repository/cart_repository.dart';
 import '../models/cart_model.dart';
 
 class CartRepositoryImpl implements CartRepository {

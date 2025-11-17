@@ -1,15 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test/presentation/provider/cart_controller.dart';
+import 'package:test/src/presentation/provider/cart_controller.dart';
 
-import 'package:test/presentation/provider/product_controller.dart';
-import 'package:test/presentation/screens/cart_screen.dart';
-import 'package:test/presentation/screens/profile_screen.dart';
-import 'package:test/presentation/screens/wishlist_screen.dart';
-import 'package:test/presentation/widgets/product_card.dart';
+import 'package:test/src/presentation/provider/product_controller.dart';
+import 'package:test/src/presentation/screens/cart_screen.dart';
+import 'package:test/src/presentation/screens/profile_screen.dart';
+import 'package:test/src/presentation/screens/wishlist_screen.dart';
+import 'package:test/src/presentation/widgets/product_card.dart';
 
 import '../provider/wishlist_controller.dart';
 

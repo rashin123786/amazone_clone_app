@@ -1,6 +1,6 @@
-import 'package:test/data/datasource/product_datasource.dart';
+import 'package:test/src/data/datasource/product_datasource.dart';
 import '../../domain/entities/product_entity.dart';
-import '../../domain/repositor/product_repository.dart';
+import '../../domain/repository/product_repository.dart';
 
 class ProductRepositoryImpl implements ProductRepository {
   final ProductDatasource datasource;

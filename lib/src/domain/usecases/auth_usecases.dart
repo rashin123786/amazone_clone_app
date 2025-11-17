@@ -1,4 +1,4 @@
-import 'package:test/domain/repositor/auth_repository.dart';
+import 'package:test/src/domain/repository/auth_repository.dart';
 
 import '../entities/user_entity.dart';
 

@@ -1,13 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:test/presentation/screens/product_details_screen.dart';
-import 'package:test/presentation/widgets/add_to_cart_widget.dart';
-import 'package:test/presentation/widgets/wishlist_widget.dart';
+import 'package:test/src/presentation/screens/product_details_screen.dart';
+import 'package:test/src/presentation/widgets/add_to_cart_widget.dart';
+import 'package:test/src/presentation/widgets/wishlist_widget.dart';
+
 import '../../domain/entities/product_entity.dart';
 import '../../domain/entities/wishlist_entity.dart';
-import '../provider/auth_controller.dart';
-import '../provider/cart_controller.dart';
 
 class ProductCard extends StatelessWidget {
   final ProductEntity product;
@@ -16,7 +14,6 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final uid = context.watch<AuthController>().currentUser?.uid;
     return SizedBox(
       height: 260,
       child: Card(

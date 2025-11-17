@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:test/domain/entities/product_entity.dart';
-import 'package:test/presentation/screens/checkout_screen.dart';
-import 'package:test/presentation/widgets/add_to_cart_widget.dart';
+import 'package:test/src/domain/entities/product_entity.dart';
+import 'package:test/src/presentation/screens/checkout_screen.dart';
+import 'package:test/src/presentation/widgets/add_to_cart_widget.dart';
 
 // Mock Product Entity
 

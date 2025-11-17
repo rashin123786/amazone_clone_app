@@ -1,4 +1,4 @@
-import 'package:test/domain/entities/cart_entity.dart';
+import 'package:test/src/domain/entities/cart_entity.dart';
 
 class CartModel {
   final String productId;

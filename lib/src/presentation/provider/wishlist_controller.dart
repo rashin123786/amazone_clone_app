@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../domain/entities/wishlist_entity.dart';
-import '../../domain/repositor/wishlist_repository.dart';
+import '../../domain/repository/wishlist_repository.dart';
 
 class WishlistController extends ChangeNotifier {
   final WishlistRepository repo;

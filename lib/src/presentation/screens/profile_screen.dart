@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test/presentation/provider/auth_controller.dart';
-import 'package:test/presentation/screens/login_screen.dart';
+import 'package:test/src/presentation/provider/auth_controller.dart';
+import 'package:test/src/presentation/screens/login_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   ProfileScreen({super.key});

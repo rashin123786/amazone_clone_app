@@ -2,9 +2,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:test/presentation/provider/cart_controller.dart';
-import 'package:test/presentation/screens/home_screen.dart';
-import 'package:test/presentation/provider/auth_controller.dart';
+import 'package:test/src/presentation/provider/cart_controller.dart';
+import 'package:test/src/presentation/screens/home_screen.dart';
+import 'package:test/src/presentation/provider/auth_controller.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -111,33 +111,51 @@ class _LoginScreenState extends State<LoginScreen> {
                                           );
 
                                       if (loginError == null) {
-                                        // Login success
+                                        if (context.mounted) {
+                                          ScaffoldMessenger.of(
+                                            context,
+                                          ).showSnackBar(
+                                            SnackBar(
+                                              content: Text("Login Successful"),
+                                            ),
+                                          );
+                                        }
+
+                                        cartController.listenToCart(
+                                          auth.currentUser?.uid ?? "",
+                                        );
+                                        if (context.mounted) {
+                                          Navigator.pushReplacement(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  HomeScreen(),
+                                            ),
+                                          );
+                                        }
+
+                                        return;
+                                      }
+                                      if (context.mounted) {
                                         ScaffoldMessenger.of(
                                           context,
                                         ).showSnackBar(
                                           SnackBar(
-                                            content: Text("Login Successful"),
+                                            content: Text(
+                                              "Creating account...",
+                                            ),
                                           ),
                                         );
-                                        cartController.listenToCart(
-                                          auth.currentUser?.uid ?? "",
-                                        );
-                                        Navigator.pushReplacement(
+                                        ScaffoldMessenger.of(
                                           context,
-                                          MaterialPageRoute(
-                                            builder: (context) => HomeScreen(),
+                                        ).showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              "Creating account...",
+                                            ),
                                           ),
                                         );
-                                        return;
                                       }
-
-                                      ScaffoldMessenger.of(
-                                        context,
-                                      ).showSnackBar(
-                                        SnackBar(
-                                          content: Text("Creating account..."),
-                                        ),
-                                      );
 
                                       String? signupError = await auth
                                           .signUpEmailAuth(
@@ -146,28 +164,38 @@ class _LoginScreenState extends State<LoginScreen> {
                                           );
 
                                       if (signupError == null) {
-                                        ScaffoldMessenger.of(
-                                          context,
-                                        ).showSnackBar(
-                                          SnackBar(
-                                            content: Text("Account created!"),
-                                          ),
-                                        );
+                                        if (context.mounted) {
+                                          ScaffoldMessenger.of(
+                                            context,
+                                          ).showSnackBar(
+                                            SnackBar(
+                                              content: Text("Account created!"),
+                                            ),
+                                          );
+                                        }
+
                                         cartController.listenToCart(
                                           auth.currentUser?.uid ?? "",
                                         );
-                                        Navigator.pushReplacement(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => HomeScreen(),
-                                          ),
-                                        );
+                                        if (context.mounted) {
+                                          Navigator.pushReplacement(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  HomeScreen(),
+                                            ),
+                                          );
+                                        }
                                       } else {
-                                        ScaffoldMessenger.of(
-                                          context,
-                                        ).showSnackBar(
-                                          SnackBar(content: Text(signupError)),
-                                        );
+                                        if (context.mounted) {
+                                          ScaffoldMessenger.of(
+                                            context,
+                                          ).showSnackBar(
+                                            SnackBar(
+                                              content: Text(signupError),
+                                            ),
+                                          );
+                                        }
                                       }
                                     }
                                   },
@@ -195,12 +223,14 @@ class _LoginScreenState extends State<LoginScreen> {
                                 cartController.listenToCart(
                                   auth.currentUser?.uid ?? "",
                                 );
-                                Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => HomeScreen(),
-                                  ),
-                                );
+                                if (context.mounted) {
+                                  Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => HomeScreen(),
+                                    ),
+                                  );
+                                }
                               }
                             },
                             label: Text("SignIn With Google"),
