@@ -1,16 +1,40 @@
-# test
+Amazon Clone – Flutter + Firebase (Android / iOS / Web)
 
-A new Flutter project.
+Live Demo (Web Version)
+Web App: https://yourusername.github.io/amazon_clone_app/
+Video Recording : https://drive.google.com/file/d/1GeW-lvFBGhW08T4EdeLNTPPdh1zgzpbi/view?usp=sharing
 
-## Getting Started
+Features Implemented:
 
-This project is a starting point for a Flutter application.
+1. Authentication
+- Email/Password login
+- Google Sign-In
+- Works on Android, iOS, Web
 
-A few resources to get you started if this is your first Flutter project:
+2. Home Screen
+- Product listing from Firebase
+- Search functionality
+- Category filter
+- Lazy-loading images
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+3. Product Detail Screen
+- Product images
+- Description, price
+- Add to Cart
+- Buy Now → Checkout
+- Ratings
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+4. Cart Functionality
+- Add/remove items
+- Increase/decrease quantity
+- Real-time sync using Firebase
+- Total amount calculation
+
+5. Wishlist (Bonus)
+- Add to wishlist
+- Sync across devices
+
+6. Profile Screen
+- View profile
+- Edit name
+- Sign-out
