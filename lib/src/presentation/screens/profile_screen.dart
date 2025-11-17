@@ -17,63 +17,72 @@ class ProfileScreen extends StatelessWidget {
 
     showModalBottomSheet(
       context: context,
-      isScrollControlled: true,
+      isScrollControlled: true, // Important
       builder: (context) {
         return Padding(
-          padding: MediaQuery.of(context).viewPadding,
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    "Edit Profile",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 12),
-                  TextFormField(
-                    controller: nameController,
-
-                    decoration: InputDecoration(
-                      labelText: "Name",
-                      border: OutlineInputBorder(),
+          padding: EdgeInsets.only(
+            bottom: MediaQuery.of(
+              context,
+            ).viewInsets.bottom, // Adjust for keyboard
+          ),
+          child: SingleChildScrollView(
+            // Makes content scrollable
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      "Edit Profile",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 12),
-                  TextFormField(
-                    controller: emailController,
-                    validator: (v) {
-                      if (v == null || v.isEmpty) {
-                        return 'Enter Email ';
-                      } else if (!RegExp(
-                        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
-                      ).hasMatch(v)) {
-                        return 'Enter valid mail';
-                      } else {
-                        return null;
-                      }
-                    },
-                    decoration: InputDecoration(
-                      labelText: "Email",
-                      border: OutlineInputBorder(),
+                    SizedBox(height: 12),
+                    TextFormField(
+                      controller: nameController,
+                      decoration: InputDecoration(
+                        labelText: "Name",
+                        border: OutlineInputBorder(),
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 12),
-                  ElevatedButton(
-                    onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        auth.updateProfile(
-                          nameController.text,
-                          emailController.text,
-                        );
-                        Navigator.pop(context);
-                      }
-                    },
-                    child: Text("Update"),
-                  ),
-                ],
+                    SizedBox(height: 12),
+                    TextFormField(
+                      controller: emailController,
+                      validator: (v) {
+                        if (v == null || v.isEmpty) {
+                          return 'Enter Email';
+                        } else if (!RegExp(
+                          r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
+                        ).hasMatch(v)) {
+                          return 'Enter valid email';
+                        } else {
+                          return null;
+                        }
+                      },
+                      decoration: InputDecoration(
+                        labelText: "Email",
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                    SizedBox(height: 12),
+                    ElevatedButton(
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          auth.updateProfile(
+                            nameController.text,
+                            emailController.text,
+                          );
+                          Navigator.pop(context);
+                        }
+                      },
+                      child: Text("Update"),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
